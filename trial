@@ -1,0 +1,44 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void)
+{
+	int i = 0, diceroll, a, b, lower, upper,j,k;
+	srand(time(0));
+
+    while (i < 5)
+    {
+
+        a = (rand()%9);
+        a = a+11;
+        b = (rand()%9);
+        b = b+11;
+        if (a < b)
+        {
+            lower = a;
+            upper = b;
+        }
+        else
+        {
+            upper = a;
+            lower = b;
+        }
+        j = upper - lower;
+        k = rand()&j;
+        k = k + lower;
+        diceroll = k;
+
+    	printf("Range %d -> %d, diceroll -> %d \n", lower, upper, diceroll);
+        i++;
+    }
+    return 0;
+}
